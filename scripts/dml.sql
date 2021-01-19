@@ -19,4 +19,7 @@ FROM(
     INNER JOIN [Sales].[Products] ON [Sales].[Orders].[ProductID] = [Sales].[Products].[ID]
 ) WHERE [Sales].[Customers].[ID] = 4;
 
+SELECT COUNT([Sales].[Orders].[Price]) FROM ([Sales].[Orders] INNER JOIN [Sales].[Products] ON [Sales].[Orders].[ProductID] = [Sales].[Products].[ID])
+WHERE [Sales].[Products].[ProductID] = 4;
+
 UPDATE [Sales].[Orders] SET Price = 250 WHERE Name = "iPhone";
