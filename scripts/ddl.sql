@@ -19,6 +19,8 @@ CREATE TABLE [Sales].[Orders]
 (
     [ID] Bigint NOT NULL IDENTITY,
     [ProductID] Bigint NOT NULL,
-    [CustomerID] Bigint NOT NULL
+    [CustomerID] Bigint NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(CustomerID) REFERENCES Customers(ID),
+    FOREIGN KEY(ProductID) REFERENCES Products(ID)
 );
-
